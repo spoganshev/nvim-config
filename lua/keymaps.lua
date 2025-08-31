@@ -37,6 +37,21 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
 -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
+vim.keymap.set('n', 'K', 'i<CR>', { noremap = true, silent = true, desc = 'Split the line' })
+vim.keymap.set('i', 'jk', '<Esc>', { noremap = true, silent = true, desc = 'Exit insert mode by pressing jk' })
+
+-- Delete/change/paste without yanking --
+-- Delete without yanking (normal mode)
+vim.keymap.set('n', '<leader>d', '"_d', { noremap = true, silent = true, desc = 'Delete without yanking (black-hole)' })
+-- Delete without yanking (visual mode)
+vim.keymap.set('v', '<leader>d', '"_d', { noremap = true, silent = true, desc = 'Visual delete without yanking (black-hole)' })
+-- Change without yanking (normal mode)
+vim.keymap.set('n', '<leader>c', '"_c', { noremap = true, silent = true, desc = 'Change without yanking (black-hole)' })
+-- Replace selection without overwriting yank (visual mode)
+vim.keymap.set('v', '<leader>c', '"_c', { noremap = true, silent = true, desc = 'Visual change without yanking (black-hole)' })
+-- Replace selection without overwriting yank (visual mode)
+vim.keymap.set('v', '<leader>p', '"_dP', { noremap = true, silent = true, desc = 'Paste over selection without yanking it' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 

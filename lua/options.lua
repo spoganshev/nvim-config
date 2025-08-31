@@ -7,7 +7,7 @@
 vim.o.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.o.relativenumber = true
+vim.o.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
@@ -72,3 +72,18 @@ vim.o.scrolloff = 10
 vim.o.confirm = true
 
 -- vim: ts=2 sts=2 sw=2 et
+
+-- Set tab to be 4 spaces wide
+vim.o.tabstop = 4
+
+-- Set auto-indentation and shift commands to use 4 spaces
+vim.o.shiftwidth = 4
+
+-- Convert tabs to spaces when typing
+vim.o.expandtab = true
+
+-- Control tab and backspace behavior in insert mode
+vim.o.softtabstop = 4
+
+-- Set iTerm tab title to current buffer name
+vim.o.title = true
