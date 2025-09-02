@@ -160,6 +160,10 @@ return {
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
             end, '[T]oggle Inlay [H]ints')
           end
+
+          map('<leader>td', function()
+            vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+          end, '[T]oggle Diagnostic')
         end,
       })
 
@@ -220,7 +224,18 @@ return {
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
-
+        basedpyright = {
+          settings = {
+            -- See https://docs.basedpyright.com/latest/configuration/language-server-settings/
+            basedpyright = {
+              analysis = {
+                autoSearchPaths = true,
+                diagnosticMode = 'openFilesOnly',
+                useLibraryCodeForTypes = true,
+              },
+            },
+          },
+        },
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
