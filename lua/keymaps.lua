@@ -52,6 +52,13 @@ vim.keymap.set('v', '<leader>c', '"_c', { noremap = true, silent = true, desc = 
 -- Replace selection without overwriting yank (visual mode)
 vim.keymap.set('v', '<leader>p', '"_dP', { noremap = true, silent = true, desc = 'Paste over selection without yanking it' })
 
+-- Toggle fullscreen
+local fullscreen = require 'custom.plugins.fullscreen'
+local toggle_fullscreen = function()
+  fullscreen:toggle_fullscreen()
+end
+vim.keymap.set('n', '<leader>tf', toggle_fullscreen, { noremap = true, silent = true, desc = 'Toggle fullscreen window' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
