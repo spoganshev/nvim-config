@@ -87,3 +87,5 @@ vim.o.softtabstop = 4
 
 -- Set iTerm tab title to current buffer name
 vim.o.title = true
+
+vim.o.background = 'dark'
