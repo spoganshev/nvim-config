@@ -59,6 +59,8 @@ local toggle_fullscreen = function()
 end
 vim.keymap.set('n', '<leader>tf', toggle_fullscreen, { noremap = true, silent = true, desc = 'Toggle fullscreen window' })
 
+vim.keymap.set('n', '<C-s>', vim.lsp.buf.signature_help, { desc = 'Show signature help' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
