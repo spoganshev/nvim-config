@@ -2,6 +2,7 @@ return {
   {
     -- See https://github.com/tpope/vim-fugitive (Git wrapper for NVIM)
     'tpope/vim-fugitive',
+    lazy = false,
     keys = {
       { '<leader>hB', ':GBrowse<CR>', desc = 'git [B]rowse', silent = true },
     },

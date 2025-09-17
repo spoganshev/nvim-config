@@ -6,6 +6,7 @@ return {
       { 'github/copilot.vim' },
     },
     build = 'make tiktoken',
+    lazy = false,
     opts = {
       prompts = {
         Rename = {
