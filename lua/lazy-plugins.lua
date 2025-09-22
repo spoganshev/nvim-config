@@ -60,6 +60,7 @@ require('lazy').setup({
   require 'kickstart.plugins.fugitive',
   require 'kickstart.plugins.snacks',
   require 'kickstart.plugins.copilot-chat',
+  require 'kickstart.plugins.lazygit',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
