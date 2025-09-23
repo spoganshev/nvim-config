@@ -228,13 +228,31 @@ return {
           settings = {
             -- See https://docs.basedpyright.com/latest/configuration/language-server-settings/
             basedpyright = {
+              disableOrganizeImports = true, -- I use ruff for this
+              disableTaggedHints = true,
               analysis = {
                 autoSearchPaths = true,
                 diagnosticMode = 'openFilesOnly',
                 useLibraryCodeForTypes = true,
+                diagnosticSeverityOverrides = {
+                  -- https://docs.basedpyright.com/latest/configuration/config-files/#type-check-rule-overrides
+                  reportUndefinedVariable = 'none',
+                  reportAny = 'none',
+                  reportExplicitAny = 'none',
+                  reportMissingTypeStubs = 'none',
+                  reportUnknownMemberType = 'none',
+                  reportUnknownVariableType = 'none',
+                  reportUnusedCallResult = 'none',
+                  reportUnknownArgumentType = 'none',
+                  reportUnusedVariable = 'none',
+                  reportUnusedImport = 'none',
+                },
               },
             },
           },
+        },
+        ruff = {
+          settings = {},
         },
         lua_ls = {
           -- cmd = { ... },
@@ -268,6 +286,7 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'mypy',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -285,6 +304,11 @@ return {
           end,
         },
       }
+      -- The above handler does not seem to work for basedpyright. require('lspconfig') is deprecated.
+      for server_name, server in pairs(servers) do
+        server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+        vim.lsp.config[server_name] = server
+      end
     end,
   },
 }
