@@ -75,4 +75,16 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+local yank_path = function(to_expand)
+  local filepath = vim.fn.expand(to_expand)
+  vim.fn.setreg('+', filepath) -- write to clippoard
+end
+
+vim.keymap.set('n', '<leader>yp', function()
+  yank_path '%:t'
+end, { desc = 'Yank: Copy current file name to clipboard' })
+vim.keymap.set('n', '<leader>yP', function()
+  yank_path '%'
+end, { desc = 'Yank: Copy current file path to clipboard' })
+
 -- vim: ts=2 sts=2 sw=2 et
