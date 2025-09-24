@@ -63,6 +63,7 @@ return {
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
         { '<leader>z', group = 'Copilot', mode = { 'n', 'v' } },
+        { '<leader>o', group = 'Obsidian' },
       },
     },
   },

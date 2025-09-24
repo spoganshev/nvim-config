@@ -89,3 +89,7 @@ vim.o.softtabstop = 4
 vim.o.title = true
 
 vim.o.background = 'dark'
+
+-- Obsidian plugin complains unless conceallevel is set to 1
+-- https://github.com/epwalsh/obsidian.nvim/issues/286
+vim.o.conceallevel = 1
