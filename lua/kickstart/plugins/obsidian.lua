@@ -23,7 +23,7 @@ return {
       },
     },
     legacy_commands = false,
-    conceallevel = 1,
+    disable_frontmatter = true,
   },
   keys = {
     { '<leader>os', ':Obsidian quick_switch<CR>', desc = 'Obsidian Quick Switch', silent = true },
