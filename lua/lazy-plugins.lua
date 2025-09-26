@@ -62,6 +62,7 @@ require('lazy').setup({
   require 'kickstart.plugins.copilot-chat',
   require 'kickstart.plugins.lazygit',
   require 'kickstart.plugins.obsidian',
+  require 'kickstart.plugins.ufo',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
