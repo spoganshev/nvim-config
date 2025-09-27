@@ -81,7 +81,8 @@ local buttons = {
     button('SPC s f', '󰈞  Search files'),
     button('SPC s .', '󰊄  Recently opened files'),
     button('SPC s g', '󰈬  Search by grep'),
-    -- button('SPC s l', '  Open last session'),
+    button('SPC w r', '  Restore last session'),
+    button('q', '󰈆  Quit', '<cmd>qa<CR>'),
   },
   opts = {
     spacing = 1,
