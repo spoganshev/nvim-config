@@ -9,7 +9,6 @@ end
 
 return {
   'obsidian-nvim/obsidian.nvim',
-  lazy = false,
   dependencies = {
     'saghen/blink.cmp',
   },
