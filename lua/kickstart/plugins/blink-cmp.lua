@@ -73,6 +73,10 @@ return {
         -- By default, you may press `<c-space>` to show the documentation.
         -- Optionally, set `auto_show = true` to show the documentation after a delay.
         documentation = { auto_show = false, auto_show_delay_ms = 500 },
+        -- see https://github.com/Saghen/blink.cmp/discussions/157 (nvim-autopairs support)
+        -- although nvim-autopairs works out of the box, it can be a bit
+        -- better integrated by enabling `auto_brackets`
+        accept = { auto_brackets = { enabled = true } },
       },
 
       sources = {
