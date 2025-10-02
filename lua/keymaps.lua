@@ -87,4 +87,8 @@ vim.keymap.set('n', '<leader>yP', function()
   yank_path '%'
 end, { desc = 'Yank: Copy current file path to clipboard' })
 
+-- snippets to insert as code
+vim.keymap.set('n', '<leader>ipm', 'A  # type: ignore[]', { desc = 'Insert Python: mypy ignore' })
+vim.keymap.set('n', '<leader>ipp', 'A  # pylint: disable=[]', { desc = 'Insert Python: pylint disable' })
+
 -- vim: ts=2 sts=2 sw=2 et

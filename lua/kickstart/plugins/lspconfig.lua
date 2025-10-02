@@ -231,6 +231,7 @@ return {
               disableOrganizeImports = true, -- I use ruff for this
               disableTaggedHints = true,
               analysis = {
+                typeCheckingMode = 'off',
                 autoSearchPaths = true,
                 diagnosticMode = 'openFilesOnly',
                 useLibraryCodeForTypes = true,

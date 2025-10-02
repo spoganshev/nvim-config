@@ -65,6 +65,8 @@ return {
         { '<leader>z', group = 'Copilot', mode = { 'n', 'v' } },
         { '<leader>o', group = 'Obsidian' },
         { '<leader>o', group = 'Yank' },
+        { '<leader>i', group = 'Insert Snippet' },
+        { '<leader>ip', group = 'Insert Python Snippet' },
       },
     },
   },
