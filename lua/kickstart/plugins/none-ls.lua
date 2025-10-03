@@ -6,6 +6,8 @@ return {
       return {
         sources = {
           nls.builtins.diagnostics.mypy,
+
+          nls.builtins.formatting.gofmt,
         },
       }
     end,
