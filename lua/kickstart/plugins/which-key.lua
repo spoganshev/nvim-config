@@ -67,6 +67,7 @@ return {
         { '<leader>o', group = 'Yank' },
         { '<leader>i', group = 'Insert Snippet' },
         { '<leader>ip', group = 'Insert Python Snippet' },
+        { '<leader>T', group = 'Neotest' },
       },
     },
   },
