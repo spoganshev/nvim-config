@@ -91,4 +91,9 @@ end, { desc = 'Yank: Copy current file path to clipboard' })
 vim.keymap.set('n', '<leader>ipm', 'A  # type: ignore[]', { desc = 'Insert Python: mypy ignore' })
 vim.keymap.set('n', '<leader>ipp', 'A  # pylint: disable=[]', { desc = 'Insert Python: pylint disable' })
 
+-- insert current date:
+vim.keymap.set('n', '<leader>id', function()
+  local date = os.date '%Y-%m-%d'
+  vim.api.nvim_put({ date }, 'c', true, true)
+end, { desc = 'Insert current date' })
 -- vim: ts=2 sts=2 sw=2 et
