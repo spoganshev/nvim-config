@@ -59,7 +59,7 @@ require('lazy').setup({
   require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.fugitive',
   require 'kickstart.plugins.snacks',
-  require 'kickstart.plugins.copilot-chat',
+  require 'kickstart.plugins.copilot',
   require 'kickstart.plugins.lazygit',
   require 'kickstart.plugins.obsidian',
   require 'kickstart.plugins.ufo',
@@ -69,6 +69,7 @@ require('lazy').setup({
   require 'kickstart.plugins.none-ls',
   require 'kickstart.plugins.neotest',
   require 'kickstart.plugins.nvim-treesitter-text-objects',
+  require 'kickstart.plugins.opencode',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
