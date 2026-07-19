@@ -16,7 +16,7 @@ A starting point for Neovim that is:
 
 ### Install Neovim
 
-Kickstart.nvim targets *only* the latest
+Kickstart.nvim requires Neovim 0.12 or later and targets *only* the latest
 ['stable'](https://github.com/neovim/neovim/releases/tag/stable) and latest
 ['nightly'](https://github.com/neovim/neovim/releases/tag/nightly) of Neovim.
 If you are experiencing issues, please make sure you have the latest versions.
@@ -78,7 +78,6 @@ too - it's ignored in the kickstart repo to make maintenance easier, but it's
 ```sh
 git clone https://github.com/dam9000/kickstart-modular.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 ```
-
 </details>
 
 <details><summary> Windows </summary>
@@ -96,6 +95,7 @@ git clone https://github.com/dam9000/kickstart-modular.nvim.git "${env:LOCALAPPD
 ```
 
 </details>
+
 
 ### Post Installation
 
@@ -243,4 +243,3 @@ sudo dnf install -y gcc make git ripgrep fd-find unzip neovim
 sudo pacman -S --noconfirm --needed gcc make git ripgrep fd unzip neovim
 ```
 </details>
-
