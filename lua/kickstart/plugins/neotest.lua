@@ -8,6 +8,7 @@ return {
       'nvim-treesitter/nvim-treesitter',
       'nvim-neotest/neotest-python',
       'nvim-neotest/neotest-go',
+      'marilari88/neotest-vitest',
     },
     config = function()
       local neotest = require 'neotest'
@@ -18,6 +19,7 @@ return {
             runner = 'pytest',
           },
           require 'neotest-go',
+          require 'neotest-vitest',
         },
         output_panel = {
           enabled = true,

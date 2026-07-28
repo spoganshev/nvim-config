@@ -4,7 +4,24 @@ return {
     build = ':TSUpdate',
     lazy = false,
     config = function()
-      local languages = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'go', 'python' }
+      local languages = {
+        'bash',
+        'c',
+        'diff',
+        'go',
+        'html',
+        'javascript',
+        'lua',
+        'luadoc',
+        'markdown',
+        'markdown_inline',
+        'python',
+        'query',
+        'tsx',
+        'typescript',
+        'vim',
+        'vimdoc',
+      }
 
       require('nvim-treesitter').setup {
         install_dir = vim.fn.stdpath 'data' .. '/site',
