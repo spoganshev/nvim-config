@@ -12,10 +12,22 @@ return {
         mode = '',
         desc = '[F]ormat buffer',
       },
+      {
+        '<leader>tF',
+        function()
+          vim.g.disable_autoformat = not vim.g.disable_autoformat
+          vim.notify('Autoformat ' .. (vim.g.disable_autoformat and 'disabled' or 'enabled'))
+        end,
+        desc = '[T]oggle auto[F]ormat',
+      },
     },
     opts = {
       notify_on_error = false,
       format_on_save = function(bufnr)
+        if vim.g.disable_autoformat then
+          return nil
+        end
+
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.
