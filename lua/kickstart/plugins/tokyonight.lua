@@ -12,6 +12,13 @@ return {
         styles = {
           comments = { italic = false }, -- Disable italics in comments
         },
+        on_highlights = function(highlights)
+          highlights.NormalFloat.bg = '#24283b'
+          highlights.FloatBorder.bg = '#24283b'
+          highlights.FloatBorder.fg = '#7aa2f7'
+          highlights.DapStop = { fg = '#ffcc00', bold = true }
+          highlights.DapStoppedLine.bg = '#3b352c'
+        end,
       }
 
       -- Load the colorscheme here.
