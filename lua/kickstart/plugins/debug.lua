@@ -34,6 +34,20 @@ return {
       desc = 'Debug: Start/Continue',
     },
     {
+      '<S-F5>',
+      function()
+        require('dap').terminate()
+      end,
+      desc = 'Debug: Terminate',
+    },
+    {
+      '<F17>',
+      function()
+        require('dap').terminate()
+      end,
+      desc = 'Debug: Terminate (Shift-F5)',
+    },
+    {
       '<F1>',
       function()
         require('dap').step_into()
@@ -122,6 +136,13 @@ return {
       },
     }
 
+    vim.fn.sign_define('DapStopped', {
+      text = '→',
+      texthl = 'DapStop',
+      linehl = 'DapStoppedLine',
+      numhl = 'DapStop',
+    })
+
     -- Change breakpoint icons
     -- vim.api.nvim_set_hl(0, 'DapBreak', { fg = '#e51400' })
     -- vim.api.nvim_set_hl(0, 'DapStop', { fg = '#ffcc00' })
@@ -135,8 +156,6 @@ return {
     -- end
 
     dap.listeners.after.event_initialized['dapui_config'] = dapui.open
-    dap.listeners.before.event_terminated['dapui_config'] = dapui.close
-    dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
     -- Install golang specific config
     require('dap-go').setup {
