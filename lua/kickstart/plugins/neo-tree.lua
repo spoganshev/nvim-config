@@ -11,14 +11,12 @@ return {
   },
   lazy = false,
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { '\\', ':Neotree toggle last<CR>', desc = 'NeoTree toggle last source', silent = true },
   },
   opts = {
-    filesystem = {
-      window = {
-        mappings = {
-          ['\\'] = 'close_window',
-        },
+    window = {
+      mappings = {
+        ['\\'] = 'close_window',
       },
     },
   },
