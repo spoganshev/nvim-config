@@ -35,6 +35,46 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- Sticky resize mode: hjkl to resize, = to equalize, any other key exits
+vim.keymap.set('n', '<leader>R', function()
+  local step = 1
+  -- Move the border in the pressed direction. The border used is the one on the
+  -- right/bottom if a neighbor exists there, otherwise the one on the left/top.
+  local has_neighbor = function(dir)
+    return vim.fn.winnr(dir) ~= vim.fn.winnr()
+  end
+  local resize = function(c)
+    if c == 'l' or c == 'h' then
+      local sign = (c == 'l') and 1 or -1
+      if has_neighbor 'l' then
+        vim.cmd('vertical resize ' .. (sign > 0 and '+' or '-') .. step)
+      elseif has_neighbor 'h' then
+        vim.cmd('vertical resize ' .. (sign > 0 and '-' or '+') .. step)
+      end
+    else
+      local sign = (c == 'j') and 1 or -1
+      if has_neighbor 'j' then
+        vim.cmd('resize ' .. (sign > 0 and '+' or '-') .. step)
+      elseif has_neighbor 'k' then
+        vim.cmd('resize ' .. (sign > 0 and '-' or '+') .. step)
+      end
+    end
+  end
+  while true do
+    vim.cmd.redraw()
+    vim.api.nvim_echo({ { '-- RESIZE (hjkl move border, = equalize, any other key exits) --', 'ModeMsg' } }, false, {})
+    local c = vim.fn.getcharstr()
+    if c == 'h' or c == 'j' or c == 'k' or c == 'l' then
+      resize(c)
+    elseif c == '=' then
+      vim.cmd 'wincmd ='
+    else
+      break
+    end
+  end
+  vim.api.nvim_echo({ { '' } }, false, {})
+end, { desc = '[R]esize splits mode' })
+
 -- Diff views
 vim.keymap.set('n', '<leader>vd', '<cmd>diffthis<CR>', { desc = 'Diff this window' })
 vim.keymap.set('n', '<leader>vD', '<cmd>windo diffthis<CR>', { desc = 'Diff all windows in this tab' })
